@@ -131,7 +131,7 @@ RUN if [ "$(uname -m)" = aarch64 ];then strip --strip-debug `find /tmp/kernel-mo
 # Device Tree Blobs
 RUN if [ "$(uname -m)" = aarch64 ];then make INSTALL_DTBS_PATH=/tmp/kernel-modules/boot/dtb dtbs_install ;fi
 
-# Package all the modules up
+# Package all the modules up //test
 RUN ( DVER=$(basename $(find /tmp/kernel-modules/lib/modules/ -mindepth 1 -maxdepth 1)) && \
       cd /tmp/kernel-modules/lib/modules/$DVER && \
       rm build source && \
